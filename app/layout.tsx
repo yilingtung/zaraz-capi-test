@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
+import TrackerScript from '@/components/TrackerScript/TrackerScript'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,7 +16,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}><Navbar />{children}</body>
+      <body className={inter.className}>
+		<TrackerScript />
+        <Navbar />
+        {children}
+      </body>
     </html>
   )
 }
